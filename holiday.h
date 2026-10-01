@@ -4,11 +4,12 @@ namespace Gimseoyoung2630005
 {
     class holiday
     {
-        dayOfyear d;
+        dayOfyear date;
         bool parkingEnforcemnt;
     public:
         holiday(dayOfyear d = dayOfyear{1,1}, bool p =false)
             : date{d}, parkingEnforcemnt{p}
+            {}
         void print() const
         {
             date.print();

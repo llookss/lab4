@@ -25,7 +25,7 @@ namespace Gimseoyoung2630005
             }
         }
     public:
-        dayOfyear(int n = 1, int d=1):month{tm}, day{d}
+        dayOfyear(int n = 1, int d=1):month{n},day{d}
         {
             testMonth();
             testDay();
@@ -40,13 +40,14 @@ namespace Gimseoyoung2630005
             std::cin >> day; testDay();
         }
         // freind hamsoo
-        friend std::istream&& operator>>(std::istream& is, dayOfyear& d)
+        friend std::istream& operator>>(std::istream& is, dayOfyear& d)
         {   
             std::cout << "Enter month: ";
             is >> d.month; d.testMonth();
             std::cout << "Enter day: ";
             is >> d.day; d.testDay();
-        } return is;
+            return is;
+        } 
 
         void setMonth(int m) {month = m; testMonth();}
         void setDay(int d) {day = d; testDay();}
